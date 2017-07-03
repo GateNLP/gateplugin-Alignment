@@ -251,11 +251,6 @@ public class LinksView extends JPanel implements AlignmentListener,
 
   PUAPair currentPair;
   
-  /**
-   * This method updates the GUI.
-   * 
-   * @param docIDsAndAnnots
-   */
   public void updateGUI(PUAPair pair) {
     this.currentPair = pair;
     

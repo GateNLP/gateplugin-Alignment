@@ -133,11 +133,6 @@ public class MatrixView extends JPanel implements AlignmentListener,
             srcAnnotations.get(currentCell.row));
   }
 
-  /**
-   * This method updates the GUI.
-   * 
-   * @param docIDsAndAnnots
-   */
   public void updateGUI(PUAPair pair) {
     this.currentPair = pair;
     // before refreshing, we remove all the highlights

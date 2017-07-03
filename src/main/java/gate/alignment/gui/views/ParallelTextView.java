@@ -292,11 +292,6 @@ public class ParallelTextView extends JPanel implements AlignmentListener,
             currentAnnotationHightlight.annotation);
   }
 
-  /**
-   * This method updates the GUI.
-   * 
-   * @param docIDsAndAnnots
-   */
   public void updateGUI(PUAPair pair) {
     // before refreshing, we remove all the highlights
     clearLatestAnnotationsSelection();

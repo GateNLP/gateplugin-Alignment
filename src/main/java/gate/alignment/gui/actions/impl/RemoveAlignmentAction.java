@@ -16,11 +16,6 @@ import java.util.Set;
  */
 public class RemoveAlignmentAction extends AbstractAlignmentAction {
 
-  /**
-   * non-javadoc
-   * 
-   * @see AlignmentAction.execute(...)
-   */
   public void executeAlignmentAction(AlignmentView alignmentView, AlignmentTask task,
           Set<Annotation> srcAlignedAnnotations,
           Set<Annotation> tgtAlignedAnnotations, Annotation clickedAnnotation)
