@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<CREOLE-DIRECTORY>
+  
+  <CREOLE>
+
+
+	<RESOURCE>
+      <NAME>Compound Document From Xml</NAME>
+      <CLASS>gate.compound.impl.CompoundDocumentFromXml</CLASS>
+      <INTERFACE>gate.compound.CompoundDocument</INTERFACE>
+      <COMMENT>GATE Compound Document.</COMMENT>
+      <HELPURL>http://gate.ac.uk/userguide/sec:alignment:compounddocument</HELPURL>
+      <PARAMETER NAME="compoundDocumentUrl"
+          SUFFIXES="xml"
+          COMMENT="Source URL">java.net.URL</PARAMETER>
+      <PARAMETER NAME="encoding" OPTIONAL="false" COMMENT="Encoding" DEFAULT="UTF-8">
+        java.lang.String</PARAMETER>
+      <ICON>lr.gif</ICON>
+    </RESOURCE>
+
+	<RESOURCE>
+      <NAME>Switch Member PR</NAME>
+      <CLASS>gate.compound.impl.SwitchMemberPR</CLASS>
+      <COMMENT>Sets the focus of a compound document to a specified member document.</COMMENT>
+      <HELPURL>http://gate.ac.uk/userguide/sec:alignment:switchmembers</HELPURL>
+     <PARAMETER NAME="document"  
+         COMMENT="The document to be processed"  
+         RUNTIME="true">gate.Document</PARAMETER>  
+      <PARAMETER NAME="documentID" RUNTIME="true">java.lang.String</PARAMETER>
+      <ICON>pr.gif</ICON>
+    </RESOURCE>
+
+	<RESOURCE>
+      <NAME>Delete Member PR</NAME>
+      <CLASS>gate.compound.impl.DeleteMemberPR</CLASS>
+      <COMMENT>Deletes one member document from a compound doc.</COMMENT>
+      <HELPURL>http://gate.ac.uk/userguide/sec:alignment:deletemembers</HELPURL>
+     <PARAMETER NAME="document"  
+         COMMENT="The document to be processed"  
+         RUNTIME="true">gate.Document</PARAMETER>  
+      <PARAMETER NAME="documentID" RUNTIME="true">java.lang.String</PARAMETER>
+      <ICON>pr.gif</ICON>
+    </RESOURCE>
+
+	<RESOURCE>
+      <NAME>Combine Members PR</NAME>
+      <CLASS>gate.composite.impl.CombineMembersPR</CLASS>
+      <COMMENT>Combines documents in a composite document.</COMMENT>
+      <HELPURL>http://gate.ac.uk/userguide/sec:alignment:compositedoc</HELPURL>
+     <PARAMETER NAME="document"  
+         COMMENT="The document to be processed"  
+         RUNTIME="true">gate.Document</PARAMETER>  
+      <PARAMETER NAME="combiningMethod" RUNTIME="false" DEFAULT="gate.composite.impl.DefaultCombiningMethod">java.lang.String</PARAMETER>
+      <PARAMETER NAME="parameters" RUNTIME="true" DEFAULT="unitAnnotationType=Sentence;inputASName=;copyUnderlyingAnnotations=true;">java.lang.String</PARAMETER>
+      <ICON>pr.gif</ICON>
+    </RESOURCE>
+
+	<RESOURCE>
+      <NAME>Segment Processing PR</NAME>
+      <CLASS>gate.composite.impl.SegmentProcessingPR</CLASS>
+      <COMMENT>Processes individual segments as separate documents</COMMENT>
+      <HELPURL>http://gate.ac.uk/userguide/sec:alignment:segment-processing</HELPURL>
+     <PARAMETER NAME="document"  
+         COMMENT="The document to be processed"  
+         RUNTIME="true">gate.Document</PARAMETER>  
+      <PARAMETER NAME="segmentAnnotationType" RUNTIME="true" DEFAULT="Section">java.lang.String</PARAMETER>
+      <PARAMETER NAME="segmentAnnotationFeatureName" RUNTIME="true" OPTIONAL="true">java.lang.String</PARAMETER>
+      <PARAMETER NAME="segmentAnnotationFeatureValue" RUNTIME="true" OPTIONAL="true">java.lang.String</PARAMETER>
+      <PARAMETER NAME="inputASName" RUNTIME="true" OPTIONAL="true">java.lang.String</PARAMETER>
+      <PARAMETER NAME="analyser" RUNTIME="true">gate.LanguageAnalyser</PARAMETER>
+      <ICON>pr.gif</ICON>
+    </RESOURCE>
+  </CREOLE>
+</CREOLE-DIRECTORY>
