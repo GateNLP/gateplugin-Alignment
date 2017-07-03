@@ -89,7 +89,7 @@ public class DefaultIteratingMethod implements IteratingMethod {
    * This method, given necessary parameters, initialises the internal
    * resources.
    * 
-   * @param compoundDocument - source document for which alignment is
+   * @param alignedDocument - source document for which alignment is
    *          taking place
    * @param srcDocumentId - id of the source document
    * @param tgtDocumentId - id of the target document
@@ -161,18 +161,18 @@ public class DefaultIteratingMethod implements IteratingMethod {
    *          and annot.getEndNode().getOffset() to decide boundaries.
    * @param documentId - id of the document to be used in the compound
    *          document.
-   * @param annotationType - type of the annotations to be retrieved
+   * @param tokenAnnotationType - type of the annotations to be retrieved
    * @return gate.AnnotationSet with annotations of type annotationType
    */
   public AnnotationSet getUnderlyingAnnotations(Annotation annot,
-          String language, String tokenAnnotationType) {
-    if(language.equals(srcDocumentID)) {
+          String documentId, String tokenAnnotationType) {
+    if(documentId.equals(srcDocumentID)) {
       return srcSequence.getUnderlyingAnnotations(annot,
               tokenAnnotationType == null
                       ? this.srcTokenAnnotationType
                       : tokenAnnotationType);
     }
-    else if(language.equals(tgtDocumentID)) {
+    else if(documentId.equals(tgtDocumentID)) {
       return tgtSequence.getUnderlyingAnnotations(annot,
               tokenAnnotationType == null
                       ? this.tgtTokenAnnotationType

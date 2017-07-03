@@ -27,9 +27,6 @@ public interface CompoundDocument extends TextualDocument {
 
 	/**
 	 * Given a document ID, it should return its respective document
-	 * 
-	 * @param language
-	 * @return
 	 */
 	public Document getDocument(String docid);
 

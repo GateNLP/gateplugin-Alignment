@@ -190,12 +190,6 @@ public abstract class AbstractCombiningMethod implements CombiningMethod {
 
   /**
    * This method returns the new offset for where the content was added
-   * 
-   * @param srcDocument
-   * @param inputAS
-   * @param unitAnnotation
-   * @param copyUnderlyingAnnotations
-   * @return
    */
   protected long[] addContent(Document srcDocument, Annotation unitAnnotation)
           throws CombiningMethodException {

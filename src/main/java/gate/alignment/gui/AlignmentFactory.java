@@ -39,15 +39,8 @@ public class AlignmentFactory {
   /**
    * AlignmentFactory makes alignment easier
    * 
-   * @param compoundDocument -> document where we want to achieve
+   * @param alignedDocument -> document where we want to achieve
    *          alignment
-   * @param inputAS -> name of the inputAnnotationSet
-   * @param tokenAnnotationType -> the level at what we want to achieve
-   *          alignment (e.g. Token or may be some other annotation
-   *          type)
-   * @param unitAnnotationType -> AlignedParentAnnotationType (e.g. if
-   *          sentences are already aligned)
-   * @throws Exception
    */
   public AlignmentFactory(CompoundDocument alignedDocument,
           String srcDocumentId, String tgtDocumentId, String srcInputAS,
@@ -80,14 +73,13 @@ public class AlignmentFactory {
 
   /**
    * Gets the underlying annotations with the given type under the given annotation
-   * @param annot
    * @param documentID - id of the document that the annot belongs to.
    * @param tokenAnnotationType
    * @return
    */
   public AnnotationSet getUnderlyingAnnotations(Annotation annot,
-          String language, String tokenAnnotationType) {
-    return iteratingMethod.getUnderlyingAnnotations(annot, language, tokenAnnotationType);
+          String documentID, String tokenAnnotationType) {
+    return iteratingMethod.getUnderlyingAnnotations(annot, documentID, tokenAnnotationType);
   }
 
   /**

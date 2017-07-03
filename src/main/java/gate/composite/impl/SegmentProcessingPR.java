@@ -227,15 +227,13 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
    * 
    * @param analyser
    */
-  public void setAnalyser(LanguageAnalyser controller) {
-    this.analyser = controller;
+  public void setAnalyser(LanguageAnalyser analyser) {
+    this.analyser = analyser;
   }
 
   /**
    * Sets the analyser. The analyser is used for processing the segmented
    * document.
-   * 
-   * @param analyser
    */
   @Deprecated
   public void setController(CorpusController controller) {
@@ -259,8 +257,6 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
    * Annotation type that has been used for segmenting the document. The PR uses
    * annotations of this type to create new composite documents and process them
    * individually.
-   * 
-   * @param unitAnnotationType
    */
   public void setSegmentAnnotationType(String segmentAnnotationType) {
     this.segmentAnnotationType = segmentAnnotationType;
@@ -279,8 +275,6 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
   /**
    * Annotation set to use for obtaining segment annotations and the annotations
    * to copy into the composite document.
-   * 
-   * @param inputASName
    */
   public void setInputASName(String inputAS) {
     this.inputASName = inputAS;
