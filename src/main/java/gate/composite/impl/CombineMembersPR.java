@@ -100,8 +100,6 @@ public class CombineMembersPR extends AbstractLanguageAnalyser implements
 
 	/**
 	 * Gets the set combining method
-	 * 
-	 * @return
 	 */
 	public String getCombiningMethod() {
 		return combiningMethod;
@@ -119,7 +117,6 @@ public class CombineMembersPR extends AbstractLanguageAnalyser implements
 
 	/**
 	 * Gets the set parameters.
-	 * @return
 	 */
 	public String getParameters() {
 		return parameters;

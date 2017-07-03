@@ -132,10 +132,6 @@ public class DefaultIteratingMethod implements IteratingMethod {
   /**
    * Retrieves the underlying text for the given annotation in the
    * document with given document id.
-   * 
-   * @param annot
-   * @param documentId
-   * @return
    */
   public String getText(Annotation annot, String documentId) {
 
@@ -188,8 +184,6 @@ public class DefaultIteratingMethod implements IteratingMethod {
 
   /**
    * retrieves the next possible pair.
-   * 
-   * @return
    */
   public Pair next() {
     Pair pair = new Pair(srcDocumentID, srcSequence.next(), tgtDocumentID,
@@ -200,8 +194,6 @@ public class DefaultIteratingMethod implements IteratingMethod {
 
   /**
    * retrieves the previous possible pair.
-   * 
-   * @return
    */
   public Pair previous() {
     Pair pair = new Pair(srcDocumentID, srcSequence.previous(), tgtDocumentID,
@@ -212,8 +204,6 @@ public class DefaultIteratingMethod implements IteratingMethod {
 
   /**
    * returns the current pair.
-   * 
-   * @return
    */
   public Pair current() {
     return currentPair;
@@ -221,8 +211,6 @@ public class DefaultIteratingMethod implements IteratingMethod {
 
   /**
    * Returns true if there is any next pair available to return.
-   * 
-   * @return
    */
   public boolean hasNext() {
     return srcSequence.hasNext() && tgtSequence.hasNext();
@@ -230,8 +218,6 @@ public class DefaultIteratingMethod implements IteratingMethod {
 
   /**
    * Return true if there is any previous pair available to return;
-   * 
-   * @return
    */
   public boolean hasPrevious() {
     return srcSequence.hasPrevious() && tgtSequence.hasPrevious();
@@ -239,9 +225,6 @@ public class DefaultIteratingMethod implements IteratingMethod {
 
   /**
    * Internal class used for maintaining annotation sequences
-   * 
-   * @author gate
-   * 
    */
   class AASequence {
     Document document;

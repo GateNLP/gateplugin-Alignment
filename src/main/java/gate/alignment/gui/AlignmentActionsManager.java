@@ -284,10 +284,6 @@ public class AlignmentActionsManager extends JPanel {
 
   /**
    * Prepares option menu
-   * 
-   * @param aligned
-   * @param highlighted
-   * @return
    */
   public JPopupMenu prepareOptionsMenu(final AlignmentView alignmentView,
           boolean aligned, boolean highlighted) {

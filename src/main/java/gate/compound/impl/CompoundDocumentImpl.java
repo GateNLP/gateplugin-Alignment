@@ -253,9 +253,6 @@ public class CompoundDocumentImpl extends AbstractCompoundDocument {
   /**
    * The alignment object contains information about the alignment of
    * text.
-   * 
-   * @param alignmentFeatureName
-   * @return
    */
   public Alignment getAlignmentInformation(String alignmentFeatureName) {
     if(alignmentFeatureName == null) {
@@ -270,8 +267,6 @@ public class CompoundDocumentImpl extends AbstractCompoundDocument {
 
   /**
    * This method returns all available alignment feature names
-   * 
-   * @return
    */
   public Set<String> getAllAlignmentFeatureNames() {
     Set<String> toReturn = new HashSet<String>();

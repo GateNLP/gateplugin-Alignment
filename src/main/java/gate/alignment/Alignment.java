@@ -83,10 +83,6 @@ public class Alignment implements Serializable {
 
   /**
    * Returns if two annotations are aligned with each other.
-   * 
-   * @param srcAnnotation
-   * @param targetAnnotation
-   * @return
    */
   public boolean areTheyAligned(Annotation srcAnnotation,
           Annotation targetAnnotation) {
@@ -99,11 +95,6 @@ public class Alignment implements Serializable {
   /**
    * Aligns the given source annotation with the given target
    * annotation.
-   * 
-   * @param srcAnnotation
-   * @param srcDocument
-   * @param targetAnnotation
-   * @param targetDocument
    */
   public void align(Annotation srcAnnotation, String srcAS,
           Document srcDocument, Annotation targetAnnotation, String tgtAS,
@@ -183,8 +174,6 @@ public class Alignment implements Serializable {
 
   /**
    * Returns a set of aligned annotations.
-   * 
-   * @return
    */
   public Set<Annotation> getAlignedAnnotations() {
     Set<Annotation> annots = alignmentMatrix.keySet();
@@ -197,9 +186,6 @@ public class Alignment implements Serializable {
 
   /**
    * This method tells which document the given annotation belongs to.
-   * 
-   * @param annotation
-   * @return
    */
   public Document getDocument(Annotation annotation) {
     return compoundDocument.getDocument(annotation2Document.get(annotation));
@@ -212,9 +198,6 @@ public class Alignment implements Serializable {
   /**
    * Given the annotation, this method returns a set of the aligned
    * annotations to that annotation.
-   * 
-   * @param srcAnnotation
-   * @return
    */
   public Set<Annotation> getAlignedAnnotations(Annotation srcAnnotation) {
     Set<Annotation> annots = alignmentMatrix.get(srcAnnotation);
@@ -225,9 +208,6 @@ public class Alignment implements Serializable {
 
   /**
    * This method tells whether the given annotation is aligned or not.
-   * 
-   * @param srcAnnotation
-   * @return
    */
   public boolean isAnnotationAligned(Annotation srcAnnotation) {
     Set<Annotation> alignedTo = alignmentMatrix.get(srcAnnotation);
@@ -240,8 +220,6 @@ public class Alignment implements Serializable {
 
   /**
    * adds a new member who wants to listens to alignment events
-   * 
-   * @param listener
    */
   public void addAlignmentListener(AlignmentListener listener) {
     if(this.listeners == null) {
@@ -253,8 +231,6 @@ public class Alignment implements Serializable {
   /**
    * removes the given listener from the list of listeners who want to
    * listens to alignment events
-   * 
-   * @param listener
    */
   public void removeAlignmentListener(AlignmentListener listener) {
     if(this.listeners == null) {
@@ -267,13 +243,6 @@ public class Alignment implements Serializable {
   /**
    * calls the annotationsAligned(...) method on each of the registered
    * listeners
-   * 
-   * @param srcAnnotation
-   * @param srcAS
-   * @param srcDocument
-   * @param targetAnnotation
-   * @param tgtAS
-   * @param targetDocument
    */
   protected void fireAnnotationsAligned(Annotation srcAnnotation, String srcAS,
           Document srcDocument, Annotation targetAnnotation, String tgtAS,
@@ -290,13 +259,6 @@ public class Alignment implements Serializable {
   /**
    * calls the annotationsUnaligned(...) method on each of the resitered
    * listeners
-   * 
-   * @param srcAnnotation
-   * @param srcAS
-   * @param srcDocument
-   * @param targetAnnotation
-   * @param tgtAS
-   * @param targetDocument
    */
   protected void fireAnnotationsUnAligned(Annotation srcAnnotation,
           String srcAS, Document srcDocument, Annotation targetAnnotation,
@@ -312,8 +274,6 @@ public class Alignment implements Serializable {
 
   /**
    * Returns a list of registered listeners
-   * 
-   * @return
    */
   public List<AlignmentListener> getAlignmentListeners() {
     if(listeners == null) {

@@ -214,8 +214,6 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
   /**
    * Gets the set analyser. The analyser is used for processing the segmented
    * document.
-   * 
-   * @return
    */
   public LanguageAnalyser getAnalyser() {
     return analyser;
@@ -246,8 +244,6 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
    * Annotation type that has been used for segmenting the document. The PR uses
    * annotations of this type to create new composite documents and process them
    * individually.
-   * 
-   * @return
    */
   public String getSegmentAnnotationType() {
     return segmentAnnotationType;
@@ -265,8 +261,6 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
   /**
    * Annotation set to use for obtaining segment annotations and the annotations
    * to copy into the composite document.
-   * 
-   * @return
    */
   public String getInputASName() {
     return inputASName;

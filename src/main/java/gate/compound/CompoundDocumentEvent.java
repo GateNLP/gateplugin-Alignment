@@ -37,8 +37,6 @@ public class CompoundDocumentEvent {
 	/**
 	 * Gets the source compound document where a document is added to it or
 	 * deleted from.
-	 * 
-	 * @return
 	 */
 	public CompoundDocument getSource() {
 		return source;
@@ -46,8 +44,6 @@ public class CompoundDocumentEvent {
 
 	/**
 	 * Gets the id of the added or deleted document.
-	 * 
-	 * @return
 	 */
 	public String getDocumentID() {
 		return documentID;

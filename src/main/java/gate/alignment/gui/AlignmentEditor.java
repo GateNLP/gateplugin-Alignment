@@ -315,9 +315,6 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
   /**
    * Introduces transparency to the given color. If c is null, a new random
    * color is generated using the color generater class.
-   * 
-   * @param c
-   * @return
    */
   public static Color getColor(Color c, float alphaValue) {
     float components[] = null;
@@ -719,9 +716,6 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
 
   /**
    * Obtains annotation set names from the document String
-   * 
-   * @param document
-   * @return
    */
   private String[] getASNames(Document document) {
     Set<String> setNames = document.getAnnotationSetNames();
@@ -1154,8 +1148,6 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
 
   /**
    * This method invokes a dialog that asks for source and target documents
-   * 
-   * @return
    */
   private Document[] askForDocuments() {
     JPanel mainPanel = new JPanel(new GridBagLayout());

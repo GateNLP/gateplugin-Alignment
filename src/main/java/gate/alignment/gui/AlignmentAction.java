@@ -44,8 +44,6 @@ public interface AlignmentAction {
    * Keep this null in order to be called along with the default align action.
    * Otherwise it is shown with this title under the options tab in the
    * alignment editor.
-   * 
-   * @return
    */
   public String getCaption();
 
@@ -53,39 +51,29 @@ public interface AlignmentAction {
    * Keep this null in order to be called along with the default align action.
    * Otherwise it is shown with this icon under the options tab in the alignment
    * editor.
-   * 
-   * @return
    */
   public Icon getIcon();
 
   /**
    * Icon's absolte path on the filesystem.
-   * 
-   * @return
    */
   public String getIconPath();
 
   /**
    * Indicates if this action should be displayed when user right clicks on an
    * aligned annotation.
-   * 
-   * @return
    */
   public boolean invokeForAlignedAnnotation();
 
   /**
    * Indicates if this action should be displayed when user right clicks on an
    * annotation that is highlighted but is not aligned.
-   * 
-   * @return
    */
   public boolean invokeForHighlightedUnalignedAnnotation();
 
   /**
    * indicates if this action should be displayed when user right clicks on an
    * annotation that is not highlighted and is not aligned.
-   * 
-   * @return
    */
   public boolean invokeForUnhighlightedUnalignedAnnotation();
 
@@ -93,9 +81,6 @@ public interface AlignmentAction {
    * This method should be used for initializing any resources required by the
    * execute() method. This method is called whenever it loaded for the first
    * time.
-   * 
-   * @param args
-   * @throws AlignmentActionInitializationException
    */
   public void init(String[] args) throws AlignmentActionInitializationException;
 
@@ -108,23 +93,17 @@ public interface AlignmentAction {
   /**
    * Indicates if this action should be called along with the default align
    * action.
-   * 
-   * @return
    */
   public boolean invokeWithAlignAction();
 
   /**
    * Indicates if this action should be called along with the unalign action.
-   * 
-   * @return
    */
   public boolean invokeWithRemoveAction();
 
   /**
    * A tooltip to show whenever user puts his/her mouse on the caption/icon of
    * this action in the alignment editor.
-   * 
-   * @return
    */
   public String getToolTip();
 }

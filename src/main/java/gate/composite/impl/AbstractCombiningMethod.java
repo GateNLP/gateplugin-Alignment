@@ -181,8 +181,6 @@ public abstract class AbstractCombiningMethod implements CombiningMethod {
 
   /**
    * Returns the Ids of combined documents
-   * 
-   * @return
    */
   public Set<String> getCombinedDocumentsIds() {
     return offsetMappings.keySet();

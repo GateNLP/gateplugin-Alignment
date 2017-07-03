@@ -440,9 +440,6 @@ public abstract class AbstractCompoundDocument extends DocumentImpl implements
 
   /**
    * Gives a single XML representation for the entire document.
-   * 
-   * @param aCompoundDoc
-   * @return
    */
   public static String toXmlAsASingleDocument(CompoundDocument aCompoundDoc) {
     Map<String, String> docXmls = new HashMap<String, String>();

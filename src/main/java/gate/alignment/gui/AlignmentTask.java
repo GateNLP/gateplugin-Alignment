@@ -25,8 +25,6 @@ import org.jdom.output.XMLOutputter;
 
 /**
  * Alignment Task class, used for retrieving PUAPairs
- * 
- * @author gate
  */
 public class AlignmentTask {
 
@@ -311,8 +309,6 @@ public class AlignmentTask {
 
   /**
    * Returns the next possible pair
-   * 
-   * @return
    */
   public PUAPair next() {
     counter++;
@@ -321,8 +317,6 @@ public class AlignmentTask {
 
   /**
    * Returns the previous pair
-   * 
-   * @return
    */
   public PUAPair previous() {
     counter--;
@@ -331,8 +325,6 @@ public class AlignmentTask {
 
   /**
    * Returns the current pair
-   * 
-   * @return
    */
   public PUAPair current() {
     if(puaList == null || counter < 0 || counter >= puaList.size())
@@ -342,8 +334,6 @@ public class AlignmentTask {
 
   /**
    * Returns true if there is any next pair available
-   * 
-   * @return
    */
   public boolean hasNext() {
     return counter + 1 >= 0 && counter + 1 < puaList.size();
@@ -351,8 +341,6 @@ public class AlignmentTask {
 
   /**
    * Returns true if there is any previous pair available
-   * 
-   * @return
    */
   public boolean hasPrevious() {
     return counter - 1 >= 0 && counter - 1 < puaList.size();

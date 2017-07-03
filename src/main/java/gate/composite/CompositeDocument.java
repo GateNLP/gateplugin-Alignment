@@ -24,7 +24,6 @@ public interface CompositeDocument extends Document {
 
 	/**
 	 * Returns the combining Method used for creating the composite document.
-	 * @return
 	 */
 	public CombiningMethod getCombiningMethod();
 
@@ -47,7 +46,6 @@ public interface CompositeDocument extends Document {
 	
 	/**
 	 * return the IDs of combined documents
-	 * @return
 	 */
 	public Set<String> getCombinedDocumentsIds();
 	
@@ -59,7 +57,6 @@ public interface CompositeDocument extends Document {
 
 	/**
 	 * This method returns the compoundDocument whose member this composite document is.
-	 * @return
 	 */
 	public CompoundDocument getCompoundDocument();
 	

@@ -63,9 +63,6 @@ public class AlignmentFactory {
 
   /**
    * Gets the text for the given annotation
-   * @param annot
-   * @param documentID - id of the document that the annot belongs to
-   * @return
    */
   public String getText(Annotation annot, String documentID) {
     return iteratingMethod.getText(annot, documentID);
@@ -74,8 +71,6 @@ public class AlignmentFactory {
   /**
    * Gets the underlying annotations with the given type under the given annotation
    * @param documentID - id of the document that the annot belongs to.
-   * @param tokenAnnotationType
-   * @return
    */
   public AnnotationSet getUnderlyingAnnotations(Annotation annot,
           String documentID, String tokenAnnotationType) {
@@ -84,7 +79,6 @@ public class AlignmentFactory {
 
   /**
    * Returns the next possible pair
-   * @return
    */
   public Pair next() {
     return iteratingMethod.next();
@@ -92,7 +86,6 @@ public class AlignmentFactory {
 
   /**
    * Returns the previous pair
-   * @return
    */
   public Pair previous() {
     return iteratingMethod.previous();
@@ -100,7 +93,6 @@ public class AlignmentFactory {
 
   /**
    * Returns the current pair
-   * @return
    */
   public Pair current() {
     return iteratingMethod.current();
@@ -108,7 +100,6 @@ public class AlignmentFactory {
 
   /**
    * Returns true if there is any next pair available 
-   * @return
    */
   public boolean hasNext() {
     return iteratingMethod.hasNext();
@@ -116,7 +107,6 @@ public class AlignmentFactory {
 
   /**
    * Returns true if there is any previous pair available
-   * @return
    */
   public boolean hasPrevious() {
     return iteratingMethod.hasPrevious();
@@ -124,7 +114,6 @@ public class AlignmentFactory {
 
   /**
    * ID of the source document
-   * @return
    */
   public String getSrcDocumentID() {
     return srcDocumentID;
@@ -132,7 +121,6 @@ public class AlignmentFactory {
 
   /**
    * ID of the target document
-   * @return
    */
   public String getTgtDocumentID() {
     return tgtDocumentID;

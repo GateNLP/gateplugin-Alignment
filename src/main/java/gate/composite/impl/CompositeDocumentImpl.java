@@ -277,8 +277,6 @@ public class CompositeDocumentImpl extends DocumentImpl implements
 
   /**
    * return the IDs of combined documents
-   * 
-   * @return
    */
   public Set<String> getCombinedDocumentsIds() {
     return this.combinedDocumentIds;
@@ -296,8 +294,6 @@ public class CompositeDocumentImpl extends DocumentImpl implements
   /**
    * This method returns the compoundDocument whose member this composite
    * document is.
-   * 
-   * @return
    */
   public CompoundDocument getCompoundDocument() {
     return this.compoundDocument;

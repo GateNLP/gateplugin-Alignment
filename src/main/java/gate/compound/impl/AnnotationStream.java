@@ -72,8 +72,6 @@ public class AnnotationStream implements Serializable {
 
 	/**
 	 * Gets the next annotation in the stream.
-	 * 
-	 * @return
 	 */
 	public Annotation next() {
 		if (list == null)
@@ -88,10 +86,6 @@ public class AnnotationStream implements Serializable {
 
 	/**
 	 * Gets the underlying text of the annotation.
-	 * 
-	 * @param ann
-	 * @return
-	 * @throws InvalidOffsetException
 	 */
 	public String getText(Annotation ann) throws InvalidOffsetException {
 		return doc.getContent().getContent(ann.getStartNode().getOffset(),
@@ -101,9 +95,6 @@ public class AnnotationStream implements Serializable {
 	/**
 	 * Gets all the contained annotations within the boundaries of the given
 	 * annotation.
-	 * 
-	 * @param ann
-	 * @return
 	 */
 	public AnnotationSet getUnderlyingAnnotations(Annotation ann) {
 		AnnotationSet set = annotationSet == null

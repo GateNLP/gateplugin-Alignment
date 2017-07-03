@@ -18,10 +18,6 @@ public interface CombiningMethod extends Serializable {
 	 * This method takes an instance of compound document and after creating
 	 * an instance of a composite document based on the provided parameters returns
 	 * it.
-	 * 
-	 * @param compoundDocument
-	 * @param parameters
-	 * @return
 	 */
 	public CompositeDocument combine(CompoundDocument compoundDocument,
 			Map<String, Object> parameters) throws CombiningMethodException;

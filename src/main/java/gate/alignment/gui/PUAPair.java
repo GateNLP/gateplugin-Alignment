@@ -60,10 +60,6 @@ public class PUAPair {
 
   /**
    * Returns underlying text annotation
-   * 
-   * @param annot
-   * @param isSrcDocument
-   * @return
    */
   public String getText(Annotation annot, boolean isSrcDocument) {
     Document toUse = alignmentTask.getSrcDoc();
@@ -76,8 +72,6 @@ public class PUAPair {
 
   /**
    * Returns unit annotations for the source document
-   * 
-   * @return
    */
   public List<Annotation> getSourceUnitAnnotations() {
     Set<Annotation> toReturn = new HashSet<Annotation>();
@@ -103,8 +97,6 @@ public class PUAPair {
 
   /**
    * Returns unit annotations for the target document
-   * 
-   * @return
    */
   public List<Annotation> getTargetUnitAnnotations() {
     Set<Annotation> toReturn = new HashSet<Annotation>();
@@ -130,8 +122,6 @@ public class PUAPair {
 
   /**
    * Returns the alignment task
-   * 
-   * @return
    */
   public AlignmentTask getAlignmentTask() {
     return alignmentTask;
@@ -139,8 +129,6 @@ public class PUAPair {
 
   /**
    * Returns the source annotations in the PUPair
-   * 
-   * @return
    */
   public Set<Annotation> getSourceAnnotations() {
     return sourceAnnotations;
@@ -148,8 +136,6 @@ public class PUAPair {
 
   /**
    * Returns the target annotations in the PUPair
-   * 
-   * @return
    */
   public Set<Annotation> getTargetAnnotations() {
     return targetAnnotations;
@@ -158,8 +144,6 @@ public class PUAPair {
   /**
    * Indicates if the alignment pair has been marked as finished
    * alignment
-   * 
-   * @return
    */
   public boolean isAlignmentFinished() {
     return alignmentFinished;

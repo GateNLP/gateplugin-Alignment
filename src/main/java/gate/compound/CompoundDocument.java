@@ -20,8 +20,6 @@ public interface CompoundDocument extends TextualDocument {
 
 	/**
 	 * Returns the currently selected document
-	 * 
-	 * @return
 	 */
 	public Document getCurrentDocument();
 
@@ -33,39 +31,28 @@ public interface CompoundDocument extends TextualDocument {
 	/**
 	 * Given a language of the document, it should set the respective document
 	 * to be the current document
-	 * 
-	 * @param documentID
 	 */
 	public void setCurrentDocument(String documentID);
 
 	/**
 	 * Given a language of the document, it should set the respective document
 	 * to be the current document
-	 * 
-	 * @param documentID
 	 */
 	public void removeDocument(String documentID);
 
 	/**
 	 * Add a new document
-	 * 
-	 * @param documentID
-	 * @param document
 	 */
 	public void addDocument(String documentID, Document document);
 
 	/**
 	 * The method should return a map of documents where the key is the language
 	 * and values is a respective document
-	 * 
-	 * @return
 	 */
 	public Map<String,Document> getDocuments();
 
 	/**
 	 * The method should return all document IDs
-	 * 
-	 * @return
 	 */
 	public List<String> getDocumentIDs();
 
@@ -83,19 +70,16 @@ public interface CompoundDocument extends TextualDocument {
 	 * The alignment object contains information about the alignment of text.
 	 * If the alignment with given name doesn't exist, this method creates an
 	 * empty alignment object and returns it.
-	 * @return
 	 */
 	public Alignment getAlignmentInformation(String alignmentFeatureName);
 	
 	/**
 	 * This method returns all available alignment feature names
-	 * @return
 	 */
 	public Set<String> getAllAlignmentFeatureNames();
 	
 	/**
 	 * Alignment object with the provided feature name is deleted
-	 * @param alignmentFeatureName
 	 */
 	public void removeAlignmentInformation(String alignmentFeatureName);
 }

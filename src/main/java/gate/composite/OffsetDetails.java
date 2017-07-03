@@ -33,7 +33,6 @@ public class OffsetDetails implements Serializable {
 	
 	/**
 	 * Name of the annotation set
-	 * @return
 	 */
 	public String getAsName() {
     return asName;
@@ -49,7 +48,6 @@ public class OffsetDetails implements Serializable {
 
   /**
 	 * Gets the new end offset
-	 * @return
 	 */
 	public long getNewEndOffset() {
 		return newEndOffset;
@@ -65,7 +63,6 @@ public class OffsetDetails implements Serializable {
 
 	/**
 	 * Gets the new start offset
-	 * @return
 	 */
 	public long getNewStartOffset() {
 		return newStartOffset;
@@ -81,7 +78,6 @@ public class OffsetDetails implements Serializable {
 
 	/**
 	 * Gets the old end offset
-	 * @return
 	 */
 	public long getOldEndOffset() {
 		return oldEndOffset;
@@ -97,7 +93,6 @@ public class OffsetDetails implements Serializable {
 
 	/**
 	 * Gets the old start offset
-	 * @return
 	 */
 	public long getOldStartOffset() {
 		return oldStartOffset;

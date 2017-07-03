@@ -15,9 +15,6 @@ public class Regex {
 
   /**
    * This must not be a regular expression but a simple string
-   * 
-   * @param s
-   * @return
    */
   public static String escape(String s) {
 

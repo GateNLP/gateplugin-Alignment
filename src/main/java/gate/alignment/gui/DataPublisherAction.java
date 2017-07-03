@@ -32,40 +32,31 @@ public interface DataPublisherAction {
 
   /**
    * data model used for obtaining data to be published.
-   * @param ddm
    */
   public void setDataModel(DefaultDataModel ddm);
 
   /**
    * Number of columns.
-   * @return
    */
   public int getColumnCount();
 
   /**
    * Number of rows
-   * @return
    */
   public int getRowCount();
 
   /**
    * Gets the value at the specified row and column
-   * @param rowIndex
-   * @param columnIndex
-   * @return
    */
   public String getValueAt(int rowIndex, int columnIndex);
 
   /**
    * Column title
-   * @param column
-   * @return
    */
   public String getColumnName(int column);
 
   /**
    * Title for the table (this one appears in the tab heading)
-   * @return
    */
   public String getTableTitle();
 }

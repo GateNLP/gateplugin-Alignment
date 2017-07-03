@@ -45,10 +45,6 @@ public interface IteratingMethod extends Serializable {
   /**
    * Retrieves the underlying text for the given annotation in the
    * document with given document id.
-   * 
-   * @param annot
-   * @param documentId
-   * @return
    */
   public String getText(Annotation annot, String documentId);
 
@@ -67,31 +63,26 @@ public interface IteratingMethod extends Serializable {
 
   /**
    * retrieves the next possible pair. 
-   * @return
    */
   public Pair next();
 
   /**
    * retrieves the previous pair.
-   * @return
    */
   public Pair previous();
 
   /**
    * Returns the last retrieved pair.
-   * @return
    */
   public Pair current();
 
   /**
    * Returns true if there is any next pair available to return.
-   * @return
    */
   public boolean hasNext();
 
   /**
    * Return true if there is any previous pair available to return;
-   * @return
    */
   public boolean hasPrevious();
 

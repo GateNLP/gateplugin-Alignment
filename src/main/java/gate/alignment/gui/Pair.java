@@ -46,7 +46,6 @@ public class Pair {
 
   /**
    * gets the id of the source document
-   * @return
    */
   public String getSourceDocumentId() {
     return sourceDocumentId;
@@ -54,7 +53,6 @@ public class Pair {
 
   /**
    * gets the id of the target document
-   * @return
    */
   public String getTargetDocumentId() {
     return targetDocumentId;
@@ -62,7 +60,6 @@ public class Pair {
 
   /**
    * gets the annotation that belongs to the source document
-   * @return
    */
   public Annotation getSrcAnnotation() {
     return srcAnnotation;
@@ -70,7 +67,6 @@ public class Pair {
 
   /**
    * gets the annotation that belongs to the target document
-   * @return
    */
   public Annotation getTgtAnnotation() {
     return tgtAnnotation;
