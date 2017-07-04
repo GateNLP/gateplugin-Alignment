@@ -44,33 +44,27 @@ import java.util.Vector;
 public abstract class AbstractCompoundDocument extends DocumentImpl implements
                                                                    CompoundDocument {
 
-  /** The encoding of the source of the document content */
-  protected String encoding = null;
-
   /**
    * If you set this flag to true the repositioning information for the document
    * will be kept in the document feature. <br>
    * Default value is false to avoid the unnecessary waste of time and memory
    */
-  protected Boolean collectRepositioningInfo = new Boolean(false);
+  protected Boolean collectRepositioningInfo = Boolean.FALSE;
 
   /**
    * If you set this flag to true the original content of the document will be
    * kept in the document feature. <br>
    * Default value is false to avoid the unnecessary waste of memory
    */
-  protected Boolean preserveOriginalContent = new Boolean(false);
+  protected Boolean preserveOriginalContent = Boolean.FALSE;
 
   /**
    * Languages
    */
   protected List<String> documentIDs;
 
-  /** The source URL */
-  protected URL sourceUrl;
-
   /**
-   * Curent Document
+   * Current Document
    */
   protected Document currentDocument;
 
@@ -86,21 +80,6 @@ public abstract class AbstractCompoundDocument extends DocumentImpl implements
    * Document listeners
    */
   private transient Vector<DocumentListener> documentListeners;
-
-  /**
-   * The start of the range that the content comes from at the source URL (or
-   * null if none).
-   */
-  protected Long sourceUrlStartOffset;
-
-  /**
-   * The end of the range that the content comes from at the source URL (or null
-   * if none).
-   */
-  protected Long sourceUrlEndOffset;
-
-  /** Is the document markup-aware? */
-  protected Boolean markupAware = new Boolean(false);
 
   /** exception message when the current document is not set */
   protected String CURR_DOC_NOT_SET_MSG = "Please use "

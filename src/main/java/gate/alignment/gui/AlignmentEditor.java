@@ -1117,6 +1117,7 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
         try {
           actionsConfFile =
               new File(new URL(actionsFile.getText().trim()).toURI());
+          if(!actionsConfFile.exists()) actionsConfFile = null;
         } catch(MalformedURLException e) {
           e.printStackTrace();
           actionsConfFile = null;
@@ -1124,7 +1125,6 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
           e.printStackTrace();
           actionsConfFile = null;
         }
-        if(!actionsConfFile.exists()) actionsConfFile = null;
       }
       // MainFrame.lockGUI("Initializing alignment task : "+
       // taskName.getText()+"... ");

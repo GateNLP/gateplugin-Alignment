@@ -1,5 +1,7 @@
 package gate.alignment;
 
+import java.io.Serializable;
+
 import gate.Annotation;
 import gate.Document;
 
@@ -10,7 +12,7 @@ import gate.Document;
  * @author niraj
  * 
  */
-public interface AlignmentListener {
+public interface AlignmentListener extends Serializable {
 
   /**
    * This method is invoked whenever two annotations are aligned with
