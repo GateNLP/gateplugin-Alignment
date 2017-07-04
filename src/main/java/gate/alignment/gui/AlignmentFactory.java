@@ -39,7 +39,7 @@ public class AlignmentFactory {
   /**
    * AlignmentFactory makes alignment easier
    * 
-   * @param alignedDocument -> document where we want to achieve
+   * @param alignedDocument -&gt; document where we want to achieve
    *          alignment
    */
   public AlignmentFactory(CompoundDocument alignedDocument,

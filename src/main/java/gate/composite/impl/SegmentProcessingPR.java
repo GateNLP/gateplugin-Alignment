@@ -32,8 +32,8 @@ import gate.util.Out;
 /**
  * As the name suggests, the PR is useful processing segments of the text. Given
  * a analyser, annotation type and a document, this PR creates a composite
- * documents for every annotation with type as specified by the <annotation
- * type>. Since the composite documents are linked with their original
+ * documents for every annotation with type as specified by the &lt;annotation
+ * type&gt;. Since the composite documents are linked with their original
  * documents, when the PR processing the composite document, the composite
  * document takes care of transferring relevant annotations back to the original
  * document. This is a good way of processing just a segment of a document.
