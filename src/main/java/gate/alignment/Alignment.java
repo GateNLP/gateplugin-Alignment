@@ -46,7 +46,7 @@ public class Alignment implements Serializable {
    * all the alignment listeners that wish to listen to vairous
    * alignment events
    */
-  protected transient List<AlignmentListener> listeners = new ArrayList<AlignmentListener>();
+  protected List<AlignmentListener> listeners = new ArrayList<AlignmentListener>();
 
   /**
    * the document this alignment object belongs to.
