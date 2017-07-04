@@ -922,11 +922,11 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
     }
   }
 
-  private final String LINKS_VIEW = "Links";
+  private static final String LINKS_VIEW = "Links";
 
-  private final String MATRIX_VIEW = "Matrix";
+  private static String MATRIX_VIEW = "Matrix";
 
-  private final String PARALLEL_VIEW = "Parallel";
+  private static String PARALLEL_VIEW = "Parallel";
 
   /**
    * types of views we support

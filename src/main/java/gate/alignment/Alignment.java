@@ -23,8 +23,6 @@ public class Alignment implements Serializable {
 
   private static final long serialVersionUID = 3977299936398488370L;
 
-  public static int counter = 0;
-
   /**
    * a map that stores information about annotation alignment. As a key,
    * a source annotation and as value, a set of aligned annotations to
@@ -69,7 +67,6 @@ public class Alignment implements Serializable {
     alignmentMatrix = new HashMap<Annotation, Set<Annotation>>();
     annotation2Document = new HashMap<Annotation, String>();
     annotation2AS = new HashMap<Annotation, String>();
-    counter++;
   }
 
   /**
