@@ -46,11 +46,10 @@ public class CompoundDocumentFromXml extends CompoundDocumentImpl {
               "The compoundDocumentUrl is null.");
     }
 
-    BufferedReader br = null;
-    try {
+    try (BufferedReader br = new BomStrippingInputStreamReader(compoundDocumentUrl
+              .openStream(), getEncoding())){
       StringBuilder xmlString = new StringBuilder();
-       br = new BomStrippingInputStreamReader(compoundDocumentUrl
-              .openStream(), getEncoding());
+       
       String line = br.readLine();
       while(line != null) {
         xmlString.append("\n").append(line);
@@ -99,11 +98,11 @@ public class CompoundDocumentFromXml extends CompoundDocumentImpl {
         docIDs.add(id);
         File newFile = new File(tempFolder, "X." + id + ".xml");
         filesToDelete.add(newFile);
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(newFile), encoding));
-        bw.write(docXmls.get(id));
-        bw.flush();
-        bw.close();
+        try (BufferedWriter bw = new BufferedWriter(
+            new OutputStreamWriter(new FileOutputStream(newFile), encoding))) {
+          bw.write(docXmls.get(id));
+          bw.flush();
+        }
         sourceUrl = newFile.toURI().toURL();
       }
       super.setDocumentIDs(docIDs);
@@ -128,7 +127,6 @@ public class CompoundDocumentFromXml extends CompoundDocumentImpl {
       }
 
       setFeatures(docFeatures);
-      br.close();
     }
     catch(UnsupportedEncodingException uee) {
       throw new ResourceInstantiationException(uee);
@@ -136,9 +134,7 @@ public class CompoundDocumentFromXml extends CompoundDocumentImpl {
     catch(IOException ioe) {
       throw new ResourceInstantiationException(ioe);
     }
-    finally {
-      IOUtils.closeQuietly(br);
-    }
+
     return this;
   } // init()
 

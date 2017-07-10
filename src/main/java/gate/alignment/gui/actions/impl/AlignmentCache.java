@@ -91,35 +91,36 @@ public class AlignmentCache implements PreDisplayAction,
           dictionary = new HashMap<String, SortedSet<String>>();
 
           if(new File(args[0]).exists()) {
-            BufferedReader br = new BomStrippingInputStreamReader(
-                    new FileInputStream(new File(args[0])), "UTF-8");
+            try (BufferedReader br = new BomStrippingInputStreamReader(
+                new FileInputStream(new File(args[0])), "UTF-8")) {
 
-            String line = br.readLine();
-            while(line != null) {
-              if(line.trim().length() == 0 || line.trim().startsWith("#")) {
+              String line = br.readLine();
+              while(line != null) {
+                if(line.trim().length() == 0 || line.trim().startsWith("#")) {
+                  line = br.readLine();
+                  continue;
+                }
+
+                String[] words = line.split("\t");
+                SortedSet<String> tgtEntries = dictionary.get(words[0].trim());
+                if(tgtEntries == null) {
+                  tgtEntries = new TreeSet<String>(new Comparator<String>() {
+                    public int compare(String s1, String s2) {
+                      String[] s1Array = s1.split("[ ]+");
+                      String[] s2Array = s2.split("[ ]+");
+                      int diff = s2Array.length - s1Array.length;
+                      if(diff == 0)
+                        return s2.compareTo(s1);
+                      else return diff;
+                    }
+                  });
+                  dictionary.put(words[0], tgtEntries);
+                }
+
+                tgtEntries.add(words[1]);
                 line = br.readLine();
-                continue;
               }
-
-              String[] words = line.split("\t");
-              SortedSet<String> tgtEntries = dictionary.get(words[0].trim());
-              if(tgtEntries == null) {
-                tgtEntries = new TreeSet<String>(new Comparator<String>() {
-                  public int compare(String s1, String s2) {
-                    String[] s1Array = s1.split("[ ]+");
-                    String[] s2Array = s2.split("[ ]+");
-                    int diff = s2Array.length - s1Array.length;
-                    if(diff == 0) return s2.compareTo(s1);
-                    else return diff;
-                  }
-                });
-                dictionary.put(words[0], tgtEntries);
-              }
-
-              tgtEntries.add(words[1]);
-              line = br.readLine();
             }
-            br.close();
           }
         }
         catch(IOException ioe) {

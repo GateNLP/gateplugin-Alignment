@@ -259,11 +259,10 @@ public class AlignmentTask {
 
     org.jdom.Document doc = new org.jdom.Document(root);
 
-    try {
-      BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
       XMLOutputter serializer = new XMLOutputter();
       serializer.output(doc, bw);
-      bw.close();
+      bw.flush();
     }
     catch(IOException e1) {
       throw new GateRuntimeException(e1);

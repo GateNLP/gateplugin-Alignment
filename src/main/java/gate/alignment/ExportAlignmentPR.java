@@ -1,5 +1,18 @@
 package gate.alignment;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import gate.Annotation;
 import gate.AnnotationSet;
 import gate.Document;
@@ -15,21 +28,6 @@ import gate.creole.metadata.CreoleResource;
 import gate.creole.metadata.Optional;
 import gate.creole.metadata.RunTime;
 import gate.util.OffsetComparator;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * A PR to export alignment information in an xml file.
@@ -154,30 +152,6 @@ public class ExportAlignmentPR extends AbstractLanguageAnalyser implements
 
     // document is a compound document
     CompoundDocument cd = (CompoundDocument)this.document;
-
-    // writer to create an xml
-    BufferedWriter bw = null;
-
-    // name of the file is the name of the document
-    try {
-      String fileName = this.document.getName();
-      File fileToOutput = new File(directory, fileName);
-
-      // if file is already there, create a new one
-      if(fileToOutput.exists()) {
-        fileToOutput = new File(directory, fileName
-                + ("" + Math.random()).substring(2, 5));
-      }
-
-      bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(
-              fileToOutput), "UTF-8"));
-    }
-    catch(UnsupportedEncodingException e) {
-      throw new ExecutionException(e);
-    }
-    catch(FileNotFoundException e) {
-      throw new ExecutionException(e);
-    }
 
     // obtain the source document
     Document srcDoc = cd.getDocument(sourceDocumentID);
@@ -377,11 +351,22 @@ public class ExportAlignmentPR extends AbstractLanguageAnalyser implements
     }
     xml = xml.append("</Document>");
 
-    try {
-      bw.write(xml.toString());
-      bw.close();
+    // name of the file is the name of the document
+
+    String fileName = this.document.getName();
+    File fileToOutput = new File(directory, fileName);
+
+    // if file is already there, create a new one
+    if(fileToOutput.exists()) {
+      fileToOutput =
+          new File(directory, fileName + ("" + Math.random()).substring(2, 5));
     }
-    catch(IOException ioe) {
+
+    try (BufferedWriter bw = new BufferedWriter(
+        new OutputStreamWriter(new FileOutputStream(fileToOutput), "UTF-8"))) {
+      bw.write(xml.toString());
+      bw.flush();
+    } catch(IOException ioe) {
       throw new ExecutionException(ioe);
     }
   }

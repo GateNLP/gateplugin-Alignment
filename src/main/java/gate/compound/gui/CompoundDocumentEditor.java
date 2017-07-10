@@ -295,12 +295,11 @@ public class CompoundDocumentEditor extends AbstractVisualResource
             file = new File(dir.getAbsolutePath() + "/" + file.getName());
           }
 
-          BufferedWriter bw = new BufferedWriter(
-                  new OutputStreamWriter(new FileOutputStream(file),
-                          ((DocumentImpl)doc).getEncoding()));
-          bw.write(doc.toXml());
-          bw.flush();
-          bw.close();
+          try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
+              new FileOutputStream(file), ((DocumentImpl)doc).getEncoding()))) {
+            bw.write(doc.toXml());
+            bw.flush();
+          }
         }
       }
       catch(Exception e) {
@@ -337,11 +336,11 @@ public class CompoundDocumentEditor extends AbstractVisualResource
         }
 
         String xml = AbstractCompoundDocument.toXmlAsASingleDocument(cd);
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(fileToSaveIn), cd.getEncoding()));
-        bw.write(xml);
-        bw.flush();
-        bw.close();
+        try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
+            new FileOutputStream(fileToSaveIn), cd.getEncoding()))) {
+          bw.write(xml);
+          bw.flush();
+        }
       }
       catch(Exception e) {
         e.printStackTrace();
