@@ -242,11 +242,11 @@ public class LinksView extends JPanel implements AlignmentListener,
           tgtSelectedAnnots.add(annot);
         }
       }
-    }
 
-    alignmentTask.getAlignmentActionsManager().executeAction(this, aa,
-            srcSelectedAnnots, tgtSelectedAnnots,
-            currentAnnotationHightlight.annotation);
+      alignmentTask.getAlignmentActionsManager().executeAction(this, aa,
+          srcSelectedAnnots, tgtSelectedAnnots,
+          currentAnnotationHightlight.annotation);
+    }
   }
 
   PUAPair currentPair;

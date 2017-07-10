@@ -1413,18 +1413,15 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
   public void annotationSetAdded(DocumentEvent e) {
     Document doc = (Document)e.getSource();
     JComboBox<String> comboBox = null;
-    if(srcDoc == doc) {
+    if(doc.equals(srcDoc)) {
       comboBox = this.srcAnnotationSets;
-    } else if(tgtDoc == doc) {
+    } else if(doc.equals(tgtDoc)) {
       comboBox = this.tgtAnnotationSets;
     } else {
       return;
     }
 
-    String selectedASName = null;
-    if(comboBox != null) {
-      selectedASName = (String)comboBox.getSelectedItem();
-    }
+    String selectedASName = (String)comboBox.getSelectedItem();
 
     String addedASName = e.getAnnotationSetName();
     if(addedASName == null || addedASName.trim().length() == 0) {
@@ -1461,19 +1458,16 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
   public void annotationSetRemoved(DocumentEvent e) {
     Document doc = (Document)e.getSource();
     JComboBox<String> comboBox = null;
-    if(srcDoc == doc) {
+    if(doc.equals(srcDoc)) {
       comboBox = this.srcAnnotationSets;
-    } else if(tgtDoc == doc) {
+    } else if(doc.equals(tgtDoc)) {
       comboBox = this.tgtAnnotationSets;
     } else {
       return;
     }
 
-    String selectedASName = null;
-    if(comboBox != null) {
-      selectedASName = (String)comboBox.getSelectedItem();
-    }
-
+    String selectedASName = (String)comboBox.getSelectedItem();
+    
     String deletedASName = e.getAnnotationSetName();
     if(deletedASName == null || deletedASName.trim().length() == 0) {
       deletedASName = DEFAULT_AS_NAME;

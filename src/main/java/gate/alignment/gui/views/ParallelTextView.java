@@ -284,12 +284,12 @@ public class ParallelTextView extends JPanel implements AlignmentListener,
           tgtSelectedAnnots.add(annot);
         }
       }
+    
+      // execute actions
+      alignmentTask.getAlignmentActionsManager().executeAction(this, aa,
+          srcSelectedAnnots, tgtSelectedAnnots,
+          currentAnnotationHightlight.annotation);
     }
-
-    // execute actions
-    alignmentTask.getAlignmentActionsManager().executeAction(this, aa,
-            srcSelectedAnnots, tgtSelectedAnnots,
-            currentAnnotationHightlight.annotation);
   }
 
   public void updateGUI(PUAPair pair) {
