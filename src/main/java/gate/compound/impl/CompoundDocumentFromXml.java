@@ -1,14 +1,5 @@
 package gate.compound.impl;
 
-import gate.Factory;
-import gate.FeatureMap;
-import gate.Gate;
-import gate.Resource;
-import gate.alignment.Alignment;
-import gate.creole.ResourceInstantiationException;
-import gate.util.BomStrippingInputStreamReader;
-import gate.util.GateRuntimeException;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -23,7 +14,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.io.IOUtils;
+import gate.Factory;
+import gate.FeatureMap;
+import gate.Gate;
+import gate.Resource;
+import gate.alignment.Alignment;
+import gate.creole.ResourceInstantiationException;
+import gate.util.BomStrippingInputStreamReader;
+import gate.util.GateRuntimeException;
 
 /**
  * Those compound documents saved in a single xml document can be
