@@ -33,6 +33,17 @@
 	<dependencies>
 		<!-- add any other libraries your plugin depends on. Any other GATE plugins 
 			you depend on at compile time should use the provided scope -->
+			<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpcore</artifactId>
+    <version>4.4.8</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.4</version>
+</dependency>
 	</dependencies>
 
 </project>
