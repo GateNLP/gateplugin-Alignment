@@ -38,7 +38,7 @@ pipeline {
                 expression { currentBuild.result == "SUCCESS" }
             }
             steps {
-                sh 'mvn -e -Dmaven.test.skip=true source:jar javadoc:jar deploy'
+                sh 'mvn -X -e -Dmaven.test.skip=true source:jar javadoc:jar deploy'
             }
         }
     }
