@@ -36,4 +36,7 @@
 			
 	</dependencies>
 
+	<name>Alignment</name>
+	<description>A selection of tools for processing parallel texts.</description>
+	<url>https://gate.ac.uk/userguide/chap:alignment</url>
 </project>
