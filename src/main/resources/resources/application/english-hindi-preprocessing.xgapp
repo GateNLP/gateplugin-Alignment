@@ -4,17 +4,17 @@
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>alignment</artifact>
-        <version>8.5-SNAPSHOT</version>
+        <version>8.6-SNAPSHOT</version>
       </gate.creole.Plugin-Maven>
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>annie</artifact>
-        <version>8.5-SNAPSHOT</version>
+        <version>8.6-SNAPSHOT</version>
       </gate.creole.Plugin-Maven>
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>lang-hindi</artifact>
-        <version>8.5-SNAPSHOT</version>
+        <version>8.6-SNAPSHOT</version>
       </gate.creole.Plugin-Maven>
     </localList>
     <collectionType>java.util.Collections$UnmodifiableSet</collectionType>
@@ -96,7 +96,7 @@
               <entry>
                 <string>transducerURL</string>
                 <gate.util.persistence.PersistenceManager-RRPersistence>
-                  <uriString>creole://uk.ac.gate.plugins;annie;8.5-SNAPSHOT/resources/sentenceSplitter/grammar/main.jape</uriString>
+                  <uriString>creole://uk.ac.gate.plugins;annie;8.6-SNAPSHOT/resources/sentenceSplitter/grammar/main.jape</uriString>
                 </gate.util.persistence.PersistenceManager-RRPersistence>
               </entry>
             </localMap>
