@@ -10,8 +10,6 @@ import gate.alignment.gui.AlignmentFactory;
 import gate.compound.CompoundDocumentEvent;
 import gate.compound.CompoundDocumentListener;
 import gate.creole.ResourceInstantiationException;
-import gate.creole.metadata.CreoleResource;
-import gate.creole.metadata.HiddenCreoleParameter;
 import gate.util.Files;
 
 import java.io.File;
@@ -28,7 +26,6 @@ import java.util.Set;
  * 
  * @author niraj
  */
-@CreoleResource(name = "Compound Document", comment = "GATE Compound Document", interfaceName = "gate.compound.CompoundDocument", helpURL = "http://gate.ac.uk/userguide/sec:alignment:compounddocument", icon = "lr.gif")
 public class CompoundDocumentImpl extends AbstractCompoundDocument {
 
   private static final long serialVersionUID = 8114328411647768889L;
@@ -290,28 +287,5 @@ public class CompoundDocumentImpl extends AbstractCompoundDocument {
       this.features.remove(alignmentFeatureName);
     }
   }
-  
-  @Override
-  @HiddenCreoleParameter
-  public void setMimeType(String mimeType) {
-    super.setMimeType(mimeType);
-  }
-  
-  @Override
-  @HiddenCreoleParameter
-  public void setStringContent(String content) {
-    super.setStringContent(content);
-  }
-  
-  @Override
-  @HiddenCreoleParameter  
-  public void setSourceUrlStartOffset(Long offset) {
-    super.setSourceUrlStartOffset(offset);
-  }
-  
-  @Override
-  @HiddenCreoleParameter  
-  public void setSourceUrlEndOffset(Long offset) {
-    super.setSourceUrlEndOffset(offset);
-  }
+
 } // class CompoundDocumentImpl

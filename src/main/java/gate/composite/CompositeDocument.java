@@ -6,7 +6,6 @@ import java.util.Set;
 
 import gate.Document;
 import gate.compound.CompoundDocument;
-import gate.creole.metadata.CreoleResource;
 
 /**
  * Composite document is a result of combining one or more documents altogether.
@@ -14,7 +13,6 @@ import gate.creole.metadata.CreoleResource;
  * @author niraj
  * 
  */
-@CreoleResource(isPrivate = true, name = "GATE Composite document", interfaceName = "gate.Document", comment = "GATE Composite document", helpURL = "http://gate.ac.uk/userguide/sec:alignment:compositedoc", icon = "document")
 public interface CompositeDocument extends Document {
 
 	/**

@@ -13,8 +13,6 @@ import gate.compound.impl.AbstractCompoundDocument;
 import gate.corpora.DocumentImpl;
 import gate.creole.AbstractVisualResource;
 import gate.creole.ResourceInstantiationException;
-import gate.creole.metadata.CreoleResource;
-import gate.creole.metadata.GuiType;
 import gate.event.ProgressListener;
 import gate.gui.ActionsPublisher;
 import gate.gui.Handle;
@@ -58,7 +56,6 @@ import javax.swing.SwingUtilities;
  * a single component.
  */
 @SuppressWarnings("serial")
-@CreoleResource(name = "Compound Document Editor", helpURL = "http://gate.ac.uk/userguide/sec:alignment:compounddoceditor", guiType = GuiType.LARGE, mainViewer = true, resourceDisplayed = "gate.compound.CompoundDocument")
 public class CompoundDocumentEditor extends AbstractVisualResource
                                                                   implements
                                                                   ActionsPublisher,

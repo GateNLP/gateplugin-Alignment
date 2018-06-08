@@ -12,8 +12,6 @@ import gate.Resource;
 import gate.compound.CompoundDocument;
 import gate.corpora.DocumentContentImpl;
 import gate.corpora.DocumentImpl;
-import gate.creole.metadata.CreoleParameter;
-import gate.creole.metadata.Optional;
 import gate.event.CreoleEvent;
 import gate.event.DatastoreEvent;
 import gate.event.DocumentListener;
@@ -292,7 +290,6 @@ public abstract class AbstractCompoundDocument extends DocumentImpl implements
   }
 
   /** Set the encoding of the document content source */
-  @CreoleParameter(defaultValue="UTF-8", comment="Encoding")
   public void setEncoding(String encoding) {
     if(currentDocument == null) {
       this.encoding = encoding;
@@ -335,7 +332,6 @@ public abstract class AbstractCompoundDocument extends DocumentImpl implements
    * @param newMarkupAware
    *          markup awareness status.
    */
-  @CreoleParameter(defaultValue="true", comment="Should the document read the original markup")
   public void setMarkupAware(Boolean newMarkupAware) {
     if(currentDocument == null) {
       this.markupAware = newMarkupAware;
@@ -659,8 +655,6 @@ public abstract class AbstractCompoundDocument extends DocumentImpl implements
     return documentIDs;
   }
 
-  @Optional
-  @CreoleParameter(comment="languages")
   public void setDocumentIDs(List<String> docIDs) {
     if(docIDs != null) {
       this.documentIDs = new ArrayList<String>();
