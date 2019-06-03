@@ -1,20 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <gate.util.persistence.GateApplication>
   <urlList class="gate.util.persistence.CollectionPersistence">
     <localList>
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>alignment</artifact>
-        <version>8.6-SNAPSHOT</version>
+        <version>8.6</version>
       </gate.creole.Plugin-Maven>
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>annie</artifact>
-        <version>8.6-SNAPSHOT</version>
+        <version>8.6</version>
       </gate.creole.Plugin-Maven>
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>lang-hindi</artifact>
-        <version>8.6-SNAPSHOT</version>
+        <version>8.6</version>
       </gate.creole.Plugin-Maven>
     </localList>
     <collectionType>java.util.Collections$UnmodifiableSet</collectionType>
@@ -36,11 +37,11 @@
           <resourceName>Switch Member PR_00039</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </initParams>
           <features class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </features>
         </gate.util.persistence.PRPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
@@ -50,7 +51,7 @@
               <entry>
                 <string>setsToKeep</string>
                 <gate.util.persistence.CollectionPersistence>
-                  <localList/>
+                  <localList />
                   <collectionType>java.util.ArrayList</collectionType>
                 </gate.util.persistence.CollectionPersistence>
               </entry>
@@ -60,33 +61,33 @@
           <resourceName>Document Reset PR_00049</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </initParams>
           <features class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </runtimeParams>
           <resourceType>gate.creole.tokeniser.DefaultTokeniser</resourceType>
           <resourceName>ANNIE English Tokeniser_00036</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </initParams>
           <features class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </runtimeParams>
           <resourceType>gate.creole.splitter.SentenceSplitter</resourceType>
           <resourceName>ANNIE Sentence Splitter_0003B</resourceName>
@@ -96,14 +97,14 @@
               <entry>
                 <string>transducerURL</string>
                 <gate.util.persistence.PersistenceManager-RRPersistence>
-                  <uriString>creole://uk.ac.gate.plugins;annie;8.6-SNAPSHOT/resources/sentenceSplitter/grammar/main.jape</uriString>
+                  <uriString>creole://uk.ac.gate.plugins;annie;8.6/resources/sentenceSplitter/grammar/main.jape</uriString>
                 </gate.util.persistence.PersistenceManager-RRPersistence>
               </entry>
             </localMap>
           </initParams>
           <features class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.PRPersistence>
@@ -120,11 +121,11 @@
           <resourceName>Switch Member PR_0003A</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </initParams>
           <features class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </features>
         </gate.util.persistence.PRPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
@@ -134,7 +135,7 @@
               <entry>
                 <string>setsToKeep</string>
                 <gate.util.persistence.CollectionPersistence>
-                  <localList/>
+                  <localList />
                   <collectionType>java.util.ArrayList</collectionType>
                 </gate.util.persistence.CollectionPersistence>
               </entry>
@@ -144,43 +145,43 @@
           <resourceName>Document Reset PR_0004A</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </initParams>
           <features class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </runtimeParams>
           <resourceType>hindi.HindiTokeniser</resourceType>
           <resourceName>Hindi Tokeniser_0003E</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </initParams>
           <features class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
         <gate.util.persistence.LanguageAnalyserPersistence>
           <runtimeParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </runtimeParams>
           <resourceType>hindi.HindiSplitter</resourceType>
           <resourceName>Hindi Splitter_00041</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </initParams>
           <features class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap/>
+            <localMap />
           </features>
         </gate.util.persistence.LanguageAnalyserPersistence>
       </localList>
@@ -190,11 +191,11 @@
     <resourceName>Corpus Pipeline_00044</resourceName>
     <initParams class="gate.util.persistence.MapPersistence">
       <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-      <localMap/>
+      <localMap />
     </initParams>
     <features class="gate.util.persistence.MapPersistence">
       <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-      <localMap/>
+      <localMap />
     </features>
   </application>
 </gate.util.persistence.GateApplication>
