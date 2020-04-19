@@ -12,7 +12,6 @@
 		<relativePath></relativePath>
 	</parent>	
 	
-	<!-- this is the description of this plugin -->
 	<groupId>uk.ac.gate.plugins</groupId>
 	<artifactId>alignment</artifactId>
 	<version>8.6.1-SNAPSHOT</version>
