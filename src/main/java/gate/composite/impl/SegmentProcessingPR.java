@@ -8,6 +8,7 @@ import java.util.Map;
 
 import gate.Annotation;
 import gate.AnnotationSet;
+import gate.Controller;
 import gate.Corpus;
 import gate.CorpusController;
 import gate.Document;
@@ -22,7 +23,9 @@ import gate.composite.CompositeDocument;
 import gate.compound.CompoundDocument;
 import gate.compound.impl.CompoundDocumentImpl;
 import gate.corpora.DocumentImpl;
+import gate.creole.AbstractController;
 import gate.creole.AbstractLanguageAnalyser;
+import gate.creole.ControllerAwarePR;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
 import gate.util.GateRuntimeException;
@@ -40,8 +43,9 @@ import gate.util.Out;
  * 
  * @author niraj
  */
-public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
-                                                                 ProcessingResource {
+public class SegmentProcessingPR 
+        extends AbstractLanguageAnalyser 
+        implements ProcessingResource, ControllerAwarePR {
 
   private static final long serialVersionUID = 8528040629940314055L;
 
@@ -79,7 +83,10 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
 
   /**
    * Should be called to execute this PR on a document.
+   * 
+   * @throws gate.creole.ExecutionException if error
    */
+  @Override
   public void execute() throws ExecutionException {
     // if no document provided
     if(document == null) { throw new ExecutionException("Document is null!"); }
@@ -128,7 +135,7 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
     Document oldDoc = analyser.getDocument();
 
     try {
-      Map<String, Object> map = new HashMap<String, Object>();
+      Map<String, Object> map = new HashMap<>();
       map.put(CombineFromAnnotID.INPUT_AS_NAME_FEATURE_NAME, inputASName);
       map.put(CombineFromAnnotID.DOCUMENT_ID_FEATURE_NAME, document.getName());
       FeatureMap hideMap = Factory.newFeatureMap();
@@ -139,7 +146,7 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
       tempCorpus.add(compoundDoc);
       analyser.setDocument(compoundDoc);
       analyser.setCorpus(tempCorpus);
-      List<Annotation> segmentList = new ArrayList<Annotation>(segmentSet);
+      List<Annotation> segmentList = new ArrayList<>(segmentSet);
       Collections.sort(segmentList, new OffsetComparator());
       for(Annotation annotation : segmentList) {
         if(debug) {
@@ -181,6 +188,13 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
           // change focus to composite document
           compoundDoc.setCurrentDocument(nameForCompositeDoc);
           // now run the application on the composite document
+          // The analyser could be a PR or a controller. If it is a controller
+          // it uses the heuristic that if the document of the controller is 
+          // not null, the controller knows it is being run as a subpipeline 
+          // in which case the controller started/finished callbacks are not
+          // invoked. Instead we have to invoke them in our own callback code.
+          // If The application is a PR, we have to invoke the callbacks of 
+          // the PR in our own callback code.
           analyser.execute();
         } catch(CombiningMethodException e) {
           throw new ExecutionException(e);
@@ -290,6 +304,40 @@ public class SegmentProcessingPR extends AbstractLanguageAnalyser implements
   public void setSegmentAnnotationFeatureValue(
       String segmentAnnotationFeatureValue) {
     this.segmentAnnotationFeatureValue = segmentAnnotationFeatureValue;
+  }
+
+  @Override
+  public void controllerExecutionStarted(Controller c) throws ExecutionException {
+    if(analyser != null) {
+      if(analyser instanceof AbstractController) {
+        ((AbstractController)analyser).invokeControllerExecutionStarted();
+      } else if (analyser instanceof ControllerAwarePR) {
+        ((ControllerAwarePR)analyser).controllerExecutionStarted(c);
+      }
+    }
+  }
+
+  @Override
+  public void controllerExecutionFinished(Controller c) throws ExecutionException {
+    if(analyser != null) {
+      if(analyser instanceof AbstractController) {
+        ((AbstractController)analyser).invokeControllerExecutionFinished();
+      } else if (analyser instanceof ControllerAwarePR) {
+        ((ControllerAwarePR)analyser).controllerExecutionFinished(c);
+      }
+    }
+  }
+
+  @Override
+  public void controllerExecutionAborted(Controller c, Throwable t) throws ExecutionException {
+     if(analyser != null) {
+       if(analyser instanceof AbstractController) {
+        ((AbstractController)analyser).invokeControllerExecutionAborted(t);
+      } else if (analyser instanceof ControllerAwarePR) {
+        ((ControllerAwarePR)analyser).controllerExecutionAborted(c, t);
+      }
+    }
+
   }
 
 } // class SegmentProcessingPR
