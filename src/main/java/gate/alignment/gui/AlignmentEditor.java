@@ -12,6 +12,7 @@ import gate.event.DocumentEvent;
 import gate.event.DocumentListener;
 import gate.event.FeatureMapListener;
 import gate.gui.MainFrame;
+import gate.resources.img.svg.AnnotationDiffIcon;
 import gate.swing.ColorGenerator;
 import gate.util.GateRuntimeException;
 
@@ -251,7 +252,7 @@ public class AlignmentEditor extends JFrame implements FeatureMapListener,
     super("Alignment Editor");
 
     // using the same icon as used for annotation diff
-    setIconImage(((ImageIcon)MainFrame.getIcon("annotation-diff")).getImage());
+    setIconImage((new AnnotationDiffIcon(64,64)).getImage());
 
     // when the main GATE gui closes - so should this one
     MainFrame.getGuiRoots().add(this);
