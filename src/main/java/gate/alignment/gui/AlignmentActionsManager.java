@@ -150,13 +150,13 @@ public class AlignmentActionsManager extends JPanel {
 
     this.setPreferredSize(new Dimension(400, 200));
 
-    actions = new HashMap<JMenuItem, AlignmentAction>();
-    actionsMenuItemByCaption = new HashMap<String, JMenuItem>();
-    allActions = new ArrayList<AlignmentAction>();
-    preDisplayActions = new ArrayList<PreDisplayAction>();
-    finishedAlignmentActions = new ArrayList<FinishedAlignmentAction>();
-    dataPublisherActions = new ArrayList<DataPublisherAction>();
-    actionsCBMap = new HashMap<AlignmentAction, PropertyActionCB>();
+    actions = new HashMap<>();
+    actionsMenuItemByCaption = new HashMap<>();
+    allActions = new ArrayList<>();
+    preDisplayActions = new ArrayList<>();
+    finishedAlignmentActions = new ArrayList<>();
+    dataPublisherActions = new ArrayList<>();
+    actionsCBMap = new HashMap<>();
 
     setBorder(BorderFactory.createTitledBorder("Actions"));
     readAction(new ResetAction());
@@ -169,30 +169,6 @@ public class AlignmentActionsManager extends JPanel {
     if(actionsFilePath != null) {
       readActions(new File(actionsFilePath));
     } // read
-
-    // default actions conf file
-    ResourceData myResourceData =
-            Gate.getCreoleRegister().get(
-                    CompoundDocumentImpl.class.getName());
-    URL creoleXml = myResourceData.getXmlFileUrl();
-    URL alignmentHomeURL = null;
-
-    // read actions file
-    File actionsConfFile = null;
-    try {
-      alignmentHomeURL = new URL(creoleXml, ".");
-
-      // loading the default actions config file.
-      actionsConfFile =
-              new File(
-                      new File(new File(alignmentHomeURL.toURI()), "resources"),
-                      "actions.conf");
-      readActions(actionsConfFile);
-    } catch(MalformedURLException mue) {
-      throw new GateRuntimeException(mue);
-    } catch(URISyntaxException use) {
-      throw new GateRuntimeException(use);
-    }
 
     setTarget(alignmentTask);
   } // initActions
